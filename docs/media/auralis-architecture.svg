@@ -1,0 +1,47 @@
+<svg width="1120" height="410" viewBox="0 0 1120 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Auralis platform architecture: Browser, FastAPI, Supabase authentication, PostgreSQL storage, Groq inference">
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1625"/><stop offset="1" stop-color="#12283a"/></linearGradient>
+  <linearGradient id="core" x2="1" y2="0"><stop stop-color="#1b5962"/><stop offset="1" stop-color="#1a3f59"/></linearGradient>
+  <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="none" stroke="#6edcbf" stroke-width="1.4" /></marker>
+  <style>
+    .title{font:600 18px Arial,sans-serif;fill:#effaf7}.sub{font:400 12px Arial,sans-serif;fill:#a8c6d0}.eyebrow{font:600 11px Arial,sans-serif;fill:#73dbc1;letter-spacing:1.5px}.line{stroke:#76d9c1;stroke-width:2;fill:none;marker-end:url(#arrow)}
+  </style>
+</defs>
+<rect width="1120" height="410" rx="24" fill="url(#bg)"/>
+<path d="M30 62 H1090" stroke="#315262"/>
+<text x="38" y="39" class="eyebrow">HOSTED APPLICATION / SYSTEM BOUNDARIES</text>
+<g>
+<rect x="42" y="134" width="212" height="151" rx="20" fill="#183044" stroke="#355c6c"/>
+<text x="66" y="168" class="eyebrow">01  EXPERIENCE</text>
+<text x="66" y="204" class="title">Browser workspace</text>
+<text x="66" y="231" class="sub">HTML · CSS · JavaScript</text>
+<text x="66" y="253" class="sub">Practice, reports, voice</text>
+</g>
+<g>
+<rect x="315" y="109" width="281" height="202" rx="22" fill="url(#core)" stroke="#4c999b"/>
+<text x="341" y="145" class="eyebrow">02  ORCHESTRATION</text>
+<text x="341" y="180" class="title">FastAPI application</text>
+<text x="341" y="205" class="sub">Authentication · API contracts</text>
+<rect x="341" y="230" width="228" height="50" rx="12" fill="#102d3c" stroke="#497a83"/>
+<text x="360" y="249" class="sub">Interview engine / policy</text>
+<text x="360" y="267" class="sub">Assessment / evidence checks</text>
+</g>
+<g>
+<rect x="670" y="84" width="190" height="80" rx="16" fill="#1f3649" stroke="#43677b"/>
+<text x="692" y="114" class="eyebrow">IDENTITY</text>
+<text x="692" y="143" class="title">Supabase Auth</text>
+<rect x="670" y="181" width="190" height="80" rx="16" fill="#1f3649" stroke="#43677b"/>
+<text x="692" y="211" class="eyebrow">PERSISTENCE</text>
+<text x="692" y="240" class="title">PostgreSQL</text>
+<rect x="911" y="134" width="165" height="109" rx="16" fill="#223b52" stroke="#42647d"/>
+<text x="933" y="166" class="eyebrow">INFERENCE</text>
+<text x="933" y="197" class="title">Groq API</text>
+<text x="933" y="219" class="sub">Model + audio tasks</text>
+</g>
+<path d="M254 210 H308" class="line"/>
+<path d="M596 171 H630 V126 H664" class="line"/>
+<path d="M596 237 H664" class="line"/>
+<path d="M596 290 H888 V190 H905" class="line"/>
+<text x="44" y="368" class="sub">HTTPS requests  •  Verified account identity  •  Owned session data  •  Structured model outputs</text>
+<text x="1074" y="368" text-anchor="end" class="sub">AURALIS / 5.7.2</text>
+</svg>
