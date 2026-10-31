@@ -4,7 +4,7 @@
 
 services:
   - type: web
-    name: auralis-5-7-2-staging
+    name: auralis-studio
     rootDir: auralis
     runtime: python
     plan: free
