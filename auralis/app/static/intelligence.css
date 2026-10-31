@@ -1,0 +1,42 @@
+/* Editorial feature surfaces, matched to the shared design system. */
+.intel-split{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,.72fr);gap:clamp(25px,5vw,75px);margin:44px 0 70px;align-items:start}
+.intel-split>div,.intel-split>.intel-aside{min-width:0}
+.intel-aside{position:sticky;top:30px;border-top:3px solid #858B67;padding:24px 0;color:#525C51}
+.intel-aside h3,.intel-results h2{font:400 clamp(26px,3vw,42px)/1.18 'Bodoni Moda',Georgia,serif;letter-spacing:-.035em;margin:12px 0 18px;color:#27332D}
+.intel-aside p,.intel-results>p{font:400 13px/1.75 'DM Sans',sans-serif;color:#4C5A4C}
+.intel-cap{font:500 10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.09em;text-transform:uppercase;color:#657659}
+.intel-question{font:400 clamp(31px,3.8vw,60px)/1.2 'Bodoni Moda',Georgia,serif;letter-spacing:-.045em;margin:18px 0 20px;color:#27332D}
+.intel-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:20px 0}
+.intel-actions button,.intel-board-tools button,.intel-dispute button,.intel-topic button,.intel-results button{border:1px solid #27332D;border-radius:2px;color:#27332D;background:transparent;padding:10px 13px;font:550 12px/1.45 'DM Sans',sans-serif;cursor:pointer}
+.intel-actions button.primary,.intel-board-tools button.primary{background:#27332D;color:#F1EEE5}
+.intel-actions button:hover,.intel-topic button:hover,.intel-dispute button:hover{background:#D8DED0}
+.intel-actions button:focus-visible,.intel-board-tools button:focus-visible,.intel-topic button:focus-visible{outline:3px solid #858B67;outline-offset:2px}
+.intel-answer{margin:32px 0 0;border-top:1px solid #AEB8A9;padding-top:30px}
+.intel-answer label,.intel-board-tools label,.view#score-evidence>div label,.view#knowledge>div label{display:block;font:550 11px/1.6 'IBM Plex Mono',monospace;color:#50614D;margin-bottom:10px}
+.intel-answer textarea,.intel-board-tools input,.intel-board-tools select,#evidence-session,#knowledge-domain,.intel-dispute textarea{border:1px solid #BAC1B2;background:#F7F5ED;padding:13px;font:400 14px/1.6 'DM Sans',sans-serif;color:#27332D;border-radius:1px;max-width:100%}
+.intel-answer textarea{width:100%;resize:vertical}.intel-aside video{background:#27332D;width:100%;min-height:180px;aspect-ratio:4/3;object-fit:contain;display:block}
+.intel-aside hr{border:0;border-top:1px solid #B7C1B1;margin:28px 0}
+.intel-results{margin:25px 0 70px;overflow-wrap:anywhere}.intel-evidence-row{border-top:1px solid #B5BDAE;padding:19px 0 25px}
+.intel-evidence-row h3,.intel-topic h3{font:400 clamp(23px,2.6vw,34px)/1.18 'Bodoni Moda',Georgia,serif;letter-spacing:-.03em;color:#27332D;margin:8px 0 12px}
+.intel-evidence-row p,.intel-evidence-row blockquote{font:400 13px/1.75 'DM Sans',sans-serif;color:#526052;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.intel-quote{background:#E2E7D9;border-left:2px solid #858B67;padding:10px 13px;margin:10px 0!important;color:#27332D!important}
+.intel-muted,.intel-evidence-row small{font:400 11px/1.7 'DM Sans',sans-serif;color:#637264;display:block}
+.intel-error{color:#8B463A!important;background:#F3E1D8;padding:12px;border-left:3px solid #8B463A}
+.intel-evidence-row details{padding:12px 0;border-bottom:1px solid #C8CCBF}
+.intel-evidence-row summary{cursor:pointer;font:500 11px/1.6 'IBM Plex Mono',monospace;overflow-wrap:anywhere}
+.intel-dispute{display:grid;gap:10px;margin:22px 0}.intel-dispute textarea{width:100%}
+.intel-board-tools{display:flex;align-items:end;flex-wrap:wrap;gap:12px;padding:24px 0;border-bottom:1px solid #BFC5B9}
+.intel-board-tools>input{flex:1;min-width:175px}.intel-board-tools select{min-height:46px}.intel-board-tools label{margin:0}
+.intel-whiteboard{position:relative;margin:24px 0 0;border:1px solid #A6B39F;background:#E8EADC;aspect-ratio:1000/540;max-width:100%;overflow:hidden}
+.intel-whiteboard svg,.intel-whiteboard canvas{width:100%;height:100%;position:absolute;inset:0}
+.intel-whiteboard canvas{pointer-events:none;touch-action:none}.intel-whiteboard svg{touch-action:none}
+.intel-check{display:flex;align-items:center;gap:8px;font:400 11px/1.6 'DM Sans',sans-serif;color:#425242}.intel-check input{accent-color:#60734F}
+.knowledge-topics{margin:28px 0 40px;border-top:1px solid #AAB6A8}.intel-topic{display:grid;grid-template-columns:55px minmax(0,1fr) 95px;align-items:center;gap:14px;padding:21px 0;border-bottom:1px solid #B7C1B1}.intel-topic h3{margin:2px 0 8px}.intel-topic small{font:500 10px/1.6 'IBM Plex Mono',monospace;color:#60745C}.intel-topic button{min-height:42px}
+#knowledge-question{border-top:2px solid #27332D;padding:20px 0 40px}#knowledge-question button{margin:6px 8px 6px 0}
+#match .suite-form textarea{width:100%}#evidence-session{width:100%}
+@media(max-width:950px){.intel-split{grid-template-columns:1fr}.intel-aside{position:static;border-top:1px solid #858B67}}
+@media(max-width:600px){.intel-question{font-size:34px}.intel-board-tools{align-items:stretch;flex-direction:column}.intel-board-tools>input,.intel-board-tools>select,.intel-board-tools>button{width:100%}.intel-topic{grid-template-columns:30px minmax(0,1fr)}.intel-topic button{grid-column:2;justify-self:start}.intel-aside video{max-width:390px}}
+@media print{#live,#match,#whiteboard,#score-evidence,#knowledge{display:none!important}}
+
+.intel-score-button{background:transparent!important;border:0!important;text-align:left;padding:5px 8px;color:#27332D;font:500 11px 'IBM Plex Mono',monospace;cursor:pointer}.intel-score-button:hover{text-decoration:underline;text-underline-offset:3px}.intel-score-button:focus-visible{outline:2px solid #858B67}
+

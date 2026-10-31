@@ -1,0 +1,1 @@
+Junior backend developer. Build Python REST APIs, design SQL schemas, handle concurrent booking requests and retries, write automated tests, and explain technical trade-offs. Work with product and QA teams. Familiarity with FastAPI is preferred.

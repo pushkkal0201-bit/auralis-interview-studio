@@ -1,0 +1,33 @@
+/* Auralis 5.5 editorial suite. Scoped, accessible and deliberately restrained. */
+.suite-nav-caption{font:500 9px/1.5 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#808a78;padding:24px 18px 9px;border-top:1px solid rgba(149,154,132,.2);margin-top:14px}
+.sidebar nav{overflow-y:auto;overscroll-behavior:contain;max-height:min(78vh,830px);scrollbar-width:thin}
+.suite-heading{padding:clamp(38px,6vw,90px) 0 clamp(25px,4vw,50px);border-bottom:1px solid #b7bdac;max-width:1150px}
+.suite-heading h1{font:400 clamp(44px,6vw,96px)/.98 'Bodoni Moda',Georgia,serif;letter-spacing:-.055em;color:#27332d;margin:20px 0}
+.suite-heading h1 em{font-weight:400;color:#858b67}
+.suite-heading>p{font:400 clamp(15px,1.6vw,19px)/1.65 'DM Sans',sans-serif;max-width:680px;color:#5d655a;margin:0}
+.suite-split{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.8fr);gap:clamp(25px,4vw,70px);padding:42px 0 90px;align-items:start}
+.suite-main,.suite-aside{min-width:0}.suite-aside{border-top:3px solid #858b67;padding:27px 0;position:sticky;top:26px}.suite-aside h2{font:400 clamp(27px,3vw,39px)/1.15 'Bodoni Moda',Georgia,serif;margin:18px 0;color:#27332d}.suite-aside p{color:#666e64;line-height:1.65}
+.suite-form{border-bottom:1px solid #c7cbbf;padding:20px 0 26px;margin-bottom:28px;display:grid;gap:12px}
+.suite-form label,.suite-main>form>label{display:block;color:#4c574c;font:600 12px/1.5 'IBM Plex Mono',monospace;letter-spacing:.035em}
+.suite-form input,.suite-form select,.suite-form textarea,.suite-main>form textarea,.suite-inline input,.suite-inline select{width:100%;min-width:0;padding:14px 15px;border:1px solid #bdc4b7;background:#f7f5ee;color:#27332d;border-radius:3px;font:400 14px/1.55 'DM Sans',sans-serif}
+.suite-form textarea,.suite-main>form textarea{resize:vertical}
+.suite-form :is(input,select,textarea):focus-visible,.suite-main>form textarea:focus-visible{outline:2px solid #858b67;outline-offset:2px}
+.suite-form button,.suite-main>form button,.suite-inline button,.suite-invite button{min-height:45px;white-space:normal}
+.suite-inline{display:flex;gap:12px;align-items:end}.suite-inline>input,.suite-inline>select,.suite-inline>div{flex:1;min-width:0}
+.suite-options{display:grid;gap:10px;padding:14px 0}.suite-option{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid #bfc5b8;background:#f7f5ee;cursor:pointer}.suite-option input{accent-color:#677b56}
+.suite-stage-rail{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px}.suite-stage{padding:10px 8px;border-top:2px solid #c8ccc0;min-width:88px;flex:1}.suite-stage.current{border-color:#27332d}.suite-stage.completed{border-color:#858b67}.suite-stage small{display:block;color:#808b7d;font:500 10px/1.5 'IBM Plex Mono',monospace}.suite-stage strong{font:500 11px/1.4 'DM Sans',sans-serif;color:#4a574a}
+.suite-surface{padding:20px 0 23px}.suite-surface h2{font:400 clamp(26px,3vw,36px)/1.22 'Bodoni Moda',Georgia,serif;color:#27332d}.suite-surface p{color:#596357;line-height:1.65}
+.suite-ledger,.suite-list{display:grid;gap:12px;margin-top:20px}.suite-entry{padding:16px 0;border-top:1px solid #c7cbbf}.suite-entry h3{font:500 16px/1.5 'DM Sans',sans-serif;color:#27332d;margin:0 0 8px}.suite-entry p{font-size:13px;line-height:1.65;margin:4px 0;color:#5a655b}.suite-entry small{font:500 10px/1.5 'IBM Plex Mono',monospace;color:#667963}.suite-entry .suite-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.suite-actions button{font-size:12px;min-height:36px;padding:8px 12px}
+.suite-duo{display:grid;grid-template-columns:1fr 1fr;gap:26px}.suite-invite{background:#e3e7d8;border-left:3px solid #858b67;padding:15px;margin-bottom:24px}.suite-invite code{word-break:break-all;display:block;font:500 12px/1.5 'IBM Plex Mono',monospace;padding:9px 0}
+.suite-muted{color:#6d766c;font:400 12px/1.5 'DM Sans',sans-serif}.suite-pill{display:inline-block;font:500 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.02em;color:#4d6048;padding:3px 7px;border:1px solid #a7b49d;margin-bottom:5px}
+.suite-entry button{background:#27332d;color:#f1eee5;border:1px solid #27332d;border-radius:3px;cursor:pointer;padding:9px 12px}.suite-entry button.secondary{background:transparent;color:#27332d}
+.suite-main>form#campus-answer-form{display:grid;gap:12px}.suite-entry code{font:12px/1.6 'IBM Plex Mono',monospace;word-break:break-word}
+@media(max-width:1040px){.suite-split{grid-template-columns:1fr}.suite-aside{position:static;border-top:1px solid #858b67}.suite-heading h1{font-size:clamp(45px,7vw,75px)}}
+@media(max-width:680px){.suite-heading{padding-top:34px}.suite-heading h1{font-size:clamp(40px,10vw,56px)}.suite-split{padding-top:24px}.suite-inline,.suite-duo{flex-direction:column;display:flex;align-items:stretch}.suite-stage{min-width:30%;padding:9px 5px}.suite-entry{overflow-wrap:anywhere}.suite-main>form button{width:100%}}
+@media print{#campus,#bilingual,#bank,#college,#reliability,.suite-nav-caption{display:none!important}}
+.suite-main [hidden],.suite-options[hidden],.suite-invite[hidden]{display:none!important}
+
+/* Radio options must not inherit global form-label spacing and full-width input rules. */
+.suite-options .suite-option{display:grid!important;grid-template-columns:18px minmax(0,1fr)!important;align-items:center!important;justify-items:start!important;gap:12px!important;margin:0!important;text-align:left!important;padding:12px 15px!important;}
+.suite-options .suite-option input[type="radio"]{display:block!important;width:16px!important;height:16px!important;min-width:16px!important;margin:0!important;padding:0!important;flex:none!important;accent-color:#69775b!important;}
+.suite-options .suite-option span{display:block;text-align:left!important;font-size:14px;color:#27332d;font-weight:500;}

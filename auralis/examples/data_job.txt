@@ -1,0 +1,1 @@
+Data analyst. Define operational metrics, clean inconsistent datasets, write SQL queries, validate missing and duplicate records, explain uncertainty, and communicate findings to nontechnical stakeholders. Familiarity with Python and spreadsheets is preferred.

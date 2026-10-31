@@ -1,0 +1,7 @@
+{
+  "notice": "ILLUSTRATIVE FIXTURE, NOT ACTUAL REA OUTPUT",
+  "application": "Sample booking application",
+  "modules": [
+    {"path": "src/bookings.js", "imports": ["sqlite"], "finding": "Database dependency appears in the booking module; runtime correctness is unverified."}
+  ]
+}

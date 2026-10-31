@@ -1,0 +1,3 @@
+Alex Morgan
+B.Tech Computer Science student.
+Built a booking API using Python, FastAPI and SQLite. Implemented booking validation, wrote unit tests, and worked with a team of three. Practised SQL, API design and debugging. Seeking a junior backend developer role.

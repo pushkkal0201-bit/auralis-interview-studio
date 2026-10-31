@@ -1,0 +1,46 @@
+# DEPLOYMENT WARNING: Render WEB services are public by default.
+# Configure real upstream access control and verify it before running this
+# staging service with sensitive records. A private Git repo is NOT a private URL.
+services:
+  - type: web
+    name: auralis-5-7-2-staging
+    runtime: python
+    plan: starter
+    branch: staging
+    autoDeployTrigger: "off"
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/ready
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: AURALIS_DEPLOYMENT_MODE
+        value: production
+      - key: AURALIS_PUBLIC_URL
+        sync: false
+      - key: AURALIS_EXTRA_HOSTS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: AURALIS_RETENTION_DAYS
+        value: '30'
+      - key: AURALIS_AUTH_ATTEMPTS_PER_15M
+        value: '8'
+      - key: AURALIS_AUTH_GLOBAL_PER_MINUTE
+        value: '90'
+      - key: AURALIS_MAX_CALLS_PER_MINUTE
+        value: '15'
+      - key: AURALIS_MAX_CALLS_PER_HOUR
+        value: '90'
+      - key: AURALIS_GLOBAL_CALLS_PER_MINUTE
+        value: '60'
+      - key: AURALIS_GLOBAL_CALLS_PER_HOUR
+        value: '500'
