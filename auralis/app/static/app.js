@@ -33,7 +33,7 @@ const sampleCV='Alex Morgan\nB.Tech Computer Science student. Built a booking AP
 const sampleJD='Junior backend developer. Build Python REST APIs, design SQL schemas, handle concurrent booking requests and retries, write automated tests, and explain technical trade-offs. Work with product and QA teams. Familiarity with FastAPI is preferred.';
 function notify(text,error=true){$('notice').hidden=!text;$('notice').textContent=text||'';if(error&&text)$('notice').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});}
 function setBusy(value){working=value;$('busy').hidden=!value;document.querySelectorAll('button').forEach(b=>b.disabled=value);if(!value)updateTimer();}
-async function api(path,options={}){const headers={...authHeader(),...options.headers};if(options.body&&!(options.body instanceof FormData)){headers['Content-Type']='application/json';options.body=JSON.stringify(options.body);}let r;try{r=await fetch(path,{...options,headers});}catch{throw Error('Auralis could not connect. Check that the application is running, then try again.');}if(r.status===401&&window.auralisAuth?.enabled&&await window.auralisAuth.refresh()){
+async function api(path,options={}){const headers={...authHeader(),...options.headers};if(options.body&&!(options.body instanceof FormData)){headers['Content-Type']='application/json';options.body=JSON.stringify(options.body);}let r;try{r=await fetch(path,{...options,headers});}catch{throw Error('Auralis could not connect. Check that the application is running, then try again.');}if(r.status===401&&window.auralisAuth?.enabled&&!window.auralisAuth.recovering&&await window.auralisAuth.refresh()){
   r=await fetch(path,{...options,headers:{...headers,...authHeader()}});
  }let data;try{data=await r.json();}catch{throw Error('Something went wrong while loading this result. Please try again.');}if(!r.ok){let detail=data.detail;if(Array.isArray(detail))detail=detail.map(e=>e.msg).join('\n');throw Error(typeof detail==='string'&&!/traceback|exception|api[_ -]?key|token|uvicorn|sqlite|\/app\//i.test(detail)?detail:'We could not complete that request. Please try again.');}return data;}
 async function run(fn){if(working)return;notify('');setBusy(true);try{await fn();}catch(e){notify(e.message);
@@ -279,8 +279,10 @@ $('delete-all').onclick=()=>{if(!confirm('Permanently delete all interviews, CVs
 $('print').onclick=()=>{if(!session?.report){notify('Generate a report first.');return;}document.body.classList.remove('print-full');document.body.classList.add('print-compact');window.addEventListener('afterprint',()=>document.body.classList.remove('print-compact'),{once:true});window.print();};
 $('print-full').onclick=()=>{if(!session?.report){notify('Generate a report first.');return;}document.body.classList.remove('print-compact');document.body.classList.add('print-full');const section=$('full-replay');const wasOpen=section.open;section.open=true;const cleanup=()=>{section.open=wasOpen;document.body.classList.remove('print-full');};window.addEventListener('afterprint',cleanup,{once:true});window.print();};
 window.addEventListener('beforeunload',()=>{stopCapture(true);speechSynthesis.cancel();});
-setInterval(updateTimer,1000);populateVoices();loadIncidents();if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=populateVoices;
-async function auralisInitialize(){await window.auralisAuth.ready;if(window.auralisAuth.enabled&&!window.auralisAuth.token)return;
+setInterval(updateTimer,1000);populateVoices();if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=populateVoices;
+async function auralisInitialize(){await window.auralisAuth.ready;
+ if(window.auralisAuth.enabled&&(window.auralisAuth.recovering||!window.auralisAuth.token))return;
+ await loadIncidents();
  if(window.auralisAuth.enabled){
   for(const opt of [...$('provider').options])if(opt.value!=='groq')opt.remove();
   $('provider').value='groq';syncModelSelector('openai/gpt-oss-120b');

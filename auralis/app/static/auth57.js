@@ -28,12 +28,13 @@ function authHeader() {
    ========================================================= */
 
 const auralisAuth = {
-  enabled: false,
+  enabled: false, recovering: false,
   token: null,
   user: null,
   ready: null,
 
   async refresh() {
+    if (this.recovering) return false; // Keep the recovery token in memory.
     try {
       const response = await fetch("/api/auth/refresh", {
         method: "POST",
@@ -66,6 +67,7 @@ const auralisAuth = {
   },
 
   async logout() {
+    this.recovering = false;
     try {
       await fetch("/api/auth/logout", {
         method: "POST",
@@ -331,6 +333,7 @@ async function bootAuth() {
     params.get("access_token")
   ) {
     auralisAuth.token = params.get("access_token");
+   auralisAuth.recovering = true;
 
     history.replaceState(
       null,
