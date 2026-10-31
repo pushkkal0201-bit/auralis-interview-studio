@@ -5,7 +5,7 @@ services:
   - type: web
     name: auralis-5-7-2-staging
     runtime: python
-    plan: starter
+    plan: free
     branch: staging
     autoDeployTrigger: "off"
     buildCommand: pip install -r requirements.txt
