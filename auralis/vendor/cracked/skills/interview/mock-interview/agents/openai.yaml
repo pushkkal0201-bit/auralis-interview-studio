@@ -1,0 +1,3 @@
+interface:
+  display_name: "Mock Interview"
+  short_description: "Timed DSA interview with a hire/no-hire verdict"
