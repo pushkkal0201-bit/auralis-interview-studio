@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2efe8">
+<title>Auralis | Career Skills</title>
+<link rel="stylesheet" href="/static/cracked.css">
+<script defer src="/static/cracked.js"></script>
+</head>
+<body>
+<a class="skip" href="#tools">Skip to skills</a>
+<header class="top">
+<a class="wordmark" href="/">auralis<span>.</span></a>
+<a class="back" href="/">Back to Interview Studio</a>
+</header>
+<main>
+<section class="intro">
+<p class="eyebrow">AURALIS / CAREER SKILLS</p>
+<h1>The next interview<br><em>takes more than one skill.</em></h1>
+<p class="lead">Explore 19 Cracked workflows for technical interviews, preparation, resumes, projects and offers — integrated into your Auralis workspace.</p>
+<p class="caution">Some workflows have related native Auralis tools. The guided chat below does not execute code, inspect GitHub, verify company questions or edit files. Full tool-driven parity is not yet available.</p>
+</section>
+<section id="tools" class="workspace" aria-label="Career skill tools">
+<div class="skills-pane">
+<div class="section-head"><h2>Explore skills</h2><span id="count">Loading…</span></div>
+<div class="filters" id="filters" aria-label="Filter skills">
+<button class="selected" data-group="all" type="button">All</button>
+<button data-group="core" type="button">Core</button>
+<button data-group="interview" type="button">Interviews</button>
+<button data-group="profile" type="button">Career profile</button>
+<button data-group="strategy" type="button">Strategy</button>
+</div>
+<div id="skills" class="skills" aria-live="polite"></div>
+</div>
+<div class="coach-pane">
+<div class="section-head"><h2 id="selected-title">Select a skill</h2><span id="selected-kind"></span></div>
+<p id="selected-description">Choose a skill to view what it does.</p>
+<p id="native-link" hidden><a href="/">Open related Auralis workspace</a></p>
+<form id="coach-form">
+<label for="context">What would you like help with?</label>
+<textarea id="context" minlength="15" maxlength="6000" rows="9" required placeholder="Describe your target role, what you've practiced, or paste the relevant resume excerpt or job description."></textarea>
+<div class="fields">
+<label>Target company (optional)<input id="company" maxlength="90" placeholder="e.g. Microsoft"></label>
+<label>AI model<select id="model"><option value="openai/gpt-oss-20b">GPT-OSS 20B</option><option value="openai/gpt-oss-120b">GPT-OSS 120B</option></select></label>
+</div>
+<label class="consent"><input id="consent" type="checkbox" required><span>I agree to send my input to Groq for this response. Do not include secrets or private third-party information.</span></label>
+<button class="submit" id="submit" type="submit">Start guided session</button>
+</form>
+<div id="message" role="status" aria-live="polite"></div>
+<article id="result" hidden>
+<p class="eyebrow">AI-GENERATED GUIDANCE / UNVERIFIED</p>
+<div id="answer" class="answer"></div>
+<h3>Suggested next steps</h3><ul id="next-steps"></ul>
+<h3>What was not verified</h3><ul id="limitations"></ul>
+</article>
+</div>
+</section>
+<footer>Cracked skill definitions © Nishant Tiwari, MIT License. Auralis integration is separate and is not endorsed by the Cracked maintainer. <a href="https://github.com/nishant-Tiwari24/cracked">Upstream repository</a>.</footer>
+</main>
+</body>
+</html>
